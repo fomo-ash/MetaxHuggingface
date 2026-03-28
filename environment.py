@@ -16,7 +16,7 @@ class StudentLifeEnv:
             "revision_level": 0.0,
             "mock_test_score": 40,
 
-            # 🔥 NEW INTELLIGENCE SIGNALS
+            # Intelligence signals
             "confidence": 0.5,
             "forgetting_risk": 0.3,
             "learning_efficiency": 0.5,
@@ -33,32 +33,27 @@ class StudentLifeEnv:
         self.step_count += 1
         reward = 0
 
-        # 🧠 Normalize + map input
+        # Normalize input
         action = action.lower().strip()
 
         if action in ["study", "learn"]:
             action = "study_new_topic"
-
         elif action in ["revise", "review"]:
             action = "revise"
-
         elif action in ["test", "exam"]:
             action = "mock_test"
-
         elif action in ["rest", "sleep", "break"]:
             action = "rest"
-
         elif action in ["skip", "idle"]:
             action = "skip"
 
-        # 🎲 Random life event
+        # Random event
         if random.random() < 0.05:
             self.state_data["energy"] -= 0.1
             self.state_data["stress"] += 0.1
             reward -= 0.2
 
-        # 🎯 ACTIONS
-
+        # ACTIONS
         if action == "study_new_topic":
             self.state_data["energy"] -= 0.1
             self.state_data["stress"] += 0.05
@@ -91,10 +86,7 @@ class StudentLifeEnv:
         elif action == "rest":
             self.state_data["energy"] += 0.2
             self.state_data["stress"] -= 0.1
-            reward += 0.2
-
-            if self.state_data["energy"] > 0.9:
-                reward -= 0.3
+            reward += 0.2  # keep rest positive
 
         elif action == "skip":
             self.state_data["stress"] += 0.1
@@ -103,11 +95,11 @@ class StudentLifeEnv:
         else:
             reward -= 0.2
 
-        # 🔥 KNOWLEDGE DECAY (no revision → forgetting)
+        # Knowledge decay
         if action != "revise":
             self.state_data["revision_level"] *= 0.98
 
-        # 🔥 UPDATE INTELLIGENCE SIGNALS
+        # Update signals
         self.state_data["forgetting_risk"] = 1 - self.state_data["revision_level"]
         self.state_data["learning_efficiency"] = self.state_data["mock_test_score"] / 100
         self.state_data["confidence"] = (
@@ -115,36 +107,39 @@ class StudentLifeEnv:
             0.5 * (self.state_data["mock_test_score"] / 100)
         )
 
-        # 🔥 REGRET MODEL (very important)
-        effort = 1 - self.state_data["energy"]
-        gain = self.state_data["syllabus_completion"]
-        regret = effort - gain
+        # Regret (SAFE VERSION)
+        if action in ["study_new_topic", "revise", "mock_test"]:
+            effort = max(0, 1 - self.state_data["energy"])
+            gain = self.state_data["syllabus_completion"]
 
-        reward -= regret * 0.1
+            regret = effort - gain
+            regret = max(-0.5, min(0.5, regret))  # clamp
 
-        # ⚠️ Penalties
+            reward -= regret * 0.05
+
+        # Penalties
         if self.state_data["energy"] <= 0:
-            reward -= 2
+            reward -= 1
 
         if self.state_data["stress"] >= 1:
-            reward -= 2
+            reward -= 1
 
-        # 🔒 Clamp values
+        # Clamp state
         self.state_data["energy"] = max(0, min(1, self.state_data["energy"]))
         self.state_data["stress"] = max(0, min(1, self.state_data["stress"]))
-
         self.state_data["syllabus_completion"] = min(1.0, self.state_data["syllabus_completion"])
         self.state_data["revision_level"] = max(0, min(1, self.state_data["revision_level"]))
 
-        # ⏳ Time progression
+        # Time
         if self.step_count % 24 == 0:
             self.state_data["exam_days_left"] -= 1
 
-            # 🔥 Exam pressure increase
             if self.state_data["exam_days_left"] <= 2:
                 self.state_data["stress"] += 0.05
 
-        # 🏁 Done condition
+        # Clamp final reward (VERY IMPORTANT)
+        reward = max(-1, min(1, reward))
+
         done = self.step_count >= self.max_steps or self.state_data["exam_days_left"] <= 0
 
         return self.state(), reward, done, {}
