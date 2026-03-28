@@ -16,6 +16,11 @@ class StudentLifeEnv:
             "revision_level": 0.0,
             "mock_test_score": 40,
 
+            # 🔥 NEW INTELLIGENCE SIGNALS
+            "confidence": 0.5,
+            "forgetting_risk": 0.3,
+            "learning_efficiency": 0.5,
+
             "exam_days_left": 7
         }
 
@@ -62,7 +67,6 @@ class StudentLifeEnv:
             self.state_data["syllabus_completion"] += progress
             reward += progress * 10
 
-            # Overstudy penalty
             if self.state_data["energy"] < 0.3:
                 reward -= 0.5
 
@@ -89,7 +93,6 @@ class StudentLifeEnv:
             self.state_data["stress"] -= 0.1
             reward += 0.2
 
-            # Prevent useless rest spam
             if self.state_data["energy"] > 0.9:
                 reward -= 0.3
 
@@ -98,8 +101,26 @@ class StudentLifeEnv:
             reward -= 0.5
 
         else:
-            # ❗ Unknown action safe handling
             reward -= 0.2
+
+        # 🔥 KNOWLEDGE DECAY (no revision → forgetting)
+        if action != "revise":
+            self.state_data["revision_level"] *= 0.98
+
+        # 🔥 UPDATE INTELLIGENCE SIGNALS
+        self.state_data["forgetting_risk"] = 1 - self.state_data["revision_level"]
+        self.state_data["learning_efficiency"] = self.state_data["mock_test_score"] / 100
+        self.state_data["confidence"] = (
+            0.5 * self.state_data["revision_level"] +
+            0.5 * (self.state_data["mock_test_score"] / 100)
+        )
+
+        # 🔥 REGRET MODEL (very important)
+        effort = 1 - self.state_data["energy"]
+        gain = self.state_data["syllabus_completion"]
+        regret = effort - gain
+
+        reward -= regret * 0.1
 
         # ⚠️ Penalties
         if self.state_data["energy"] <= 0:
@@ -113,11 +134,15 @@ class StudentLifeEnv:
         self.state_data["stress"] = max(0, min(1, self.state_data["stress"]))
 
         self.state_data["syllabus_completion"] = min(1.0, self.state_data["syllabus_completion"])
-        self.state_data["revision_level"] = min(1.0, self.state_data["revision_level"])
+        self.state_data["revision_level"] = max(0, min(1, self.state_data["revision_level"]))
 
         # ⏳ Time progression
         if self.step_count % 24 == 0:
             self.state_data["exam_days_left"] -= 1
+
+            # 🔥 Exam pressure increase
+            if self.state_data["exam_days_left"] <= 2:
+                self.state_data["stress"] += 0.05
 
         # 🏁 Done condition
         done = self.step_count >= self.max_steps or self.state_data["exam_days_left"] <= 0
