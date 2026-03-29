@@ -1,8 +1,21 @@
-def grade(env):
-    completion = env.state_data["syllabus_completion"]
-    revision = env.state_data["revision_level"]
-    score = env.state_data["mock_test_score"] / 100
+def grade(total_reward, env):
+    subjects = env.state_data["subjects"]
+
+    # 📊 balance score (penalize uneven learning)
+    values = list(subjects.values())
+    balance = 1 - (max(values) - min(values))  # smaller gap = better
+
+    avg_completion = sum(values) / len(values)
+    mock = env.state_data["mock_test_score"] / 100
+    confidence = env.state_data["confidence"]
     stress_penalty = 1 - env.state_data["stress"]
 
-    final = 0.3*completion + 0.3*revision + 0.3*score + 0.1*stress_penalty
-    return max(0, min(1, final))
+    final_score = (
+        0.25 * avg_completion +
+        0.2 * balance +
+        0.25 * mock +
+        0.2 * confidence +
+        0.1 * stress_penalty
+    )
+
+    return max(0.0, min(1.0, final_score))

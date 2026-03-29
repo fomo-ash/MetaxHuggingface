@@ -6,34 +6,44 @@ from graders.hard import grade as hard_grade
 env = StudentLifeEnv()
 state = env.reset()
 
+total_reward = 0
+
 for step in range(168):
 
-    # 🧠 Smarter baseline strategy
+    subjects = state["subjects"]
+    avg_completion = sum(subjects.values()) / len(subjects)
 
+    weakest = min(subjects, key=subjects.get)
+
+    # 🔥 Improved strategy
     if state["energy"] < 0.3:
         action = "rest"
 
-    elif state["syllabus_completion"] < 0.6:
-        action = "study_new_topic"
+    elif state["stress"] > 0.7:
+        action = "rest"
 
-    elif state["revision_level"] < 0.5:
+    elif state["revision_level"] < 0.3:
         action = "revise"
 
-    elif state["mock_test_score"] < 70:
-        action = "mock_test"
+    elif subjects[weakest] < 0.7:
+        action = f"study {weakest}"   # flexible input
+
+    elif avg_completion < 0.85:
+        action = "study"
 
     else:
-        action = "revise"
+        action = "mock_test"
 
     state, reward, done, _ = env.step(action)
+    total_reward += reward
 
     if done:
         break
 
-# 📊 Compute scores
+# Scores
 easy_score = easy_grade(env)
 medium_score = medium_grade(env)
-hard_score = hard_grade(env)
+hard_score = hard_grade(total_reward, env)
 
 print("==== RESULTS ====")
 print("Easy Score:", easy_score)

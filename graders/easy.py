@@ -1,2 +1,6 @@
 def grade(env):
-    return min(1.0, env.state_data["syllabus_completion"])
+    subjects = env.state_data["subjects"]
+
+    avg_completion = sum(subjects.values()) / len(subjects)
+
+    return max(0.0, min(1.0, avg_completion))

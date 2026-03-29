@@ -1,7 +1,9 @@
 def grade(env):
-    completion = env.state_data["syllabus_completion"]
-    revision = env.state_data["revision_level"]
-    score = env.state_data["mock_test_score"] / 100
+    subjects = env.state_data["subjects"]
 
-    final = 0.4*completion + 0.3*revision + 0.3*score
-    return max(0, min(1, final))
+    avg_completion = sum(subjects.values()) / len(subjects)
+    revision = env.state_data["revision_level"]
+
+    score = 0.6 * avg_completion + 0.4 * revision
+
+    return max(0.0, min(1.0, score))

@@ -12,11 +12,16 @@ class StudentLifeEnv:
             "energy": 1.0,
             "stress": 0.2,
 
-            "syllabus_completion": 0.1,
+            # 🔥 SUBJECTS (NEW CORE)
+            "subjects": {
+                "math": 0.3,
+                "physics": 0.3,
+                "chemistry": 0.3
+            },
+
             "revision_level": 0.0,
             "mock_test_score": 40,
 
-            # Intelligence signals
             "confidence": 0.5,
             "forgetting_risk": 0.3,
             "learning_efficiency": 0.5,
@@ -33,25 +38,28 @@ class StudentLifeEnv:
         self.step_count += 1
         reward = 0
 
-        # Normalize input
         action = action.lower().strip()
 
-        if action in ["study", "learn"]:
+        if "study" in action:
             action = "study_new_topic"
-        elif action in ["revise", "review"]:
+        elif "revise" in action or "review" in action:
             action = "revise"
-        elif action in ["test", "exam"]:
+        elif "test" in action or "exam" in action:
             action = "mock_test"
-        elif action in ["rest", "sleep", "break"]:
+        elif "rest" in action or "sleep" in action:
             action = "rest"
-        elif action in ["skip", "idle"]:
+        elif "skip" in action:
             action = "skip"
 
-        # Random event
+        # random event
         if random.random() < 0.05:
             self.state_data["energy"] -= 0.1
             self.state_data["stress"] += 0.1
             reward -= 0.2
+
+        # pick subject
+        subject = random.choice(list(self.state_data["subjects"].keys()))
+        weakest = min(self.state_data["subjects"], key=self.state_data["subjects"].get)
 
         # ACTIONS
         if action == "study_new_topic":
@@ -59,11 +67,16 @@ class StudentLifeEnv:
             self.state_data["stress"] += 0.05
 
             progress = random.uniform(0.02, 0.05)
-            self.state_data["syllabus_completion"] += progress
+
+            if self.state_data["energy"] < 0.2:
+                progress *= 0.5  # burnout
+
+            self.state_data["subjects"][subject] += progress
+
             reward += progress * 10
 
-            if self.state_data["energy"] < 0.3:
-                reward -= 0.5
+            if subject == weakest:
+                reward += 0.2
 
         elif action == "revise":
             self.state_data["energy"] -= 0.08
@@ -73,11 +86,8 @@ class StudentLifeEnv:
         elif action == "mock_test":
             self.state_data["energy"] -= 0.1
 
-            noise = random.uniform(-5, 10)
-            base = self.state_data["syllabus_completion"] * 100
-            revision_bonus = self.state_data["revision_level"] * 50
-
-            score = base * 0.6 + revision_bonus * 0.4 + noise
+            avg = sum(self.state_data["subjects"].values()) / 3
+            score = avg * 100 + random.uniform(-5, 10)
             score = max(0, min(100, score))
 
             self.state_data["mock_test_score"] = score
@@ -86,7 +96,7 @@ class StudentLifeEnv:
         elif action == "rest":
             self.state_data["energy"] += 0.2
             self.state_data["stress"] -= 0.1
-            reward += 0.2  # keep rest positive
+            reward += 0.2
 
         elif action == "skip":
             self.state_data["stress"] += 0.1
@@ -95,49 +105,41 @@ class StudentLifeEnv:
         else:
             reward -= 0.2
 
-        # Knowledge decay
+        # decay
         if action != "revise":
             self.state_data["revision_level"] *= 0.98
 
-        # Update signals
+        avg = sum(self.state_data["subjects"].values()) / 3
+
         self.state_data["forgetting_risk"] = 1 - self.state_data["revision_level"]
         self.state_data["learning_efficiency"] = self.state_data["mock_test_score"] / 100
-        self.state_data["confidence"] = (
-            0.5 * self.state_data["revision_level"] +
-            0.5 * (self.state_data["mock_test_score"] / 100)
-        )
+        self.state_data["confidence"] = 0.5 * self.state_data["revision_level"] + 0.5 * avg
 
-        # Regret (SAFE VERSION)
+        # regret
         if action in ["study_new_topic", "revise", "mock_test"]:
             effort = max(0, 1 - self.state_data["energy"])
-            gain = self.state_data["syllabus_completion"]
-
-            regret = effort - gain
-            regret = max(-0.5, min(0.5, regret))  # clamp
-
+            regret = effort - avg
+            regret = max(-0.5, min(0.5, regret))
             reward -= regret * 0.05
 
-        # Penalties
+        # penalties
         if self.state_data["energy"] <= 0:
             reward -= 1
-
         if self.state_data["stress"] >= 1:
             reward -= 1
 
-        # Clamp state
+        # clamp
+        for sub in self.state_data["subjects"]:
+            self.state_data["subjects"][sub] = min(1.0, self.state_data["subjects"][sub])
+
         self.state_data["energy"] = max(0, min(1, self.state_data["energy"]))
         self.state_data["stress"] = max(0, min(1, self.state_data["stress"]))
-        self.state_data["syllabus_completion"] = min(1.0, self.state_data["syllabus_completion"])
         self.state_data["revision_level"] = max(0, min(1, self.state_data["revision_level"]))
 
-        # Time
+        # time
         if self.step_count % 24 == 0:
             self.state_data["exam_days_left"] -= 1
 
-            if self.state_data["exam_days_left"] <= 2:
-                self.state_data["stress"] += 0.05
-
-        # Clamp final reward (VERY IMPORTANT)
         reward = max(-1, min(1, reward))
 
         done = self.step_count >= self.max_steps or self.state_data["exam_days_left"] <= 0
