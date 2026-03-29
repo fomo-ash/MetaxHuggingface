@@ -1,0 +1,3372 @@
+{
+  "summary": {
+    "total_steps": 168,
+    "total_reward": 73.29735484352908,
+    "easy_score": 0.8672792384381882,
+    "medium_score": 0.6505785446386679,
+    "hard_score": 0.796020934234794,
+    "timestamp": "2026-03-29T21:19:52.123965"
+  },
+  "trajectory": [
+    {
+      "step": 0,
+      "action": "revise",
+      "reward": 0.511,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 1,
+      "action": "revise",
+      "reward": 0.507,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 2,
+      "action": "revise",
+      "reward": 0.503,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 3,
+      "action": "revise",
+      "reward": 0.499,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 4,
+      "action": "revise",
+      "reward": 0.495,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 5,
+      "action": "revise",
+      "reward": 0.491,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 6,
+      "action": "revise",
+      "reward": 0.487,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 7,
+      "action": "revise",
+      "reward": 0.483,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 8,
+      "action": "revise",
+      "reward": 0.479,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 9,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 10,
+      "action": "revise",
+      "reward": 0.485,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 11,
+      "action": "revise",
+      "reward": 0.481,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 12,
+      "action": "study math",
+      "reward": 0.4894404009977821,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 13,
+      "action": "rest",
+      "reward": 0.0,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 14,
+      "action": "study physics",
+      "reward": 0.6109403710010473,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 15,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 16,
+      "action": "revise",
+      "reward": 0.4832443581373537,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 17,
+      "action": "study chemistry",
+      "reward": -0.02314131017383928,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 18,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 19,
+      "action": "study chemistry",
+      "reward": 0.24726855484045768,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 20,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 21,
+      "action": "study chemistry",
+      "reward": 0.33678225287599894,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 22,
+      "action": "revise",
+      "reward": 0.4806148028666194,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 23,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 24,
+      "action": "study chemistry",
+      "reward": 0.4573930952060987,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 25,
+      "action": "study chemistry",
+      "reward": 0.20184895277466813,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 26,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 27,
+      "action": "study chemistry",
+      "reward": 0.6535577331392488,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 28,
+      "action": "revise",
+      "reward": 0.48321161417212566,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 29,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 30,
+      "action": "study chemistry",
+      "reward": 0.45335710687292713,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 31,
+      "action": "study chemistry",
+      "reward": 0.4615643918550503,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 32,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 33,
+      "action": "study chemistry",
+      "reward": 0.570621801150414,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 34,
+      "action": "revise",
+      "reward": 0.48641388690410603,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 35,
+      "action": "study physics",
+      "reward": -0.03542736077646877,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 36,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 37,
+      "action": "study physics",
+      "reward": 0.31498546963040275,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 38,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 39,
+      "action": "revise",
+      "reward": 0.488281469697648,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 40,
+      "action": "study physics",
+      "reward": 0.46694879446053295,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 41,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 42,
+      "action": "study physics",
+      "reward": 0.2168439076914523,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 43,
+      "action": "study physics",
+      "reward": 0.3320012871873127,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 44,
+      "action": "rest",
+      "reward": 0.0,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 45,
+      "action": "revise",
+      "reward": 0.4860434681567095,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 46,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 47,
+      "action": "study physics",
+      "reward": 0.446099215222861,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 48,
+      "action": "study physics",
+      "reward": 0.4267087978652761,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 49,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 50,
+      "action": "study physics",
+      "reward": 0.48910447334518875,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 51,
+      "action": "revise",
+      "reward": 0.48902661053892976,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 52,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 53,
+      "action": "study physics",
+      "reward": 0.20196936290468612,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 54,
+      "action": "study physics",
+      "reward": 0.28772068220984964,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 55,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 56,
+      "action": "study physics",
+      "reward": 0.2952733105810419,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 57,
+      "action": "revise",
+      "reward": 0.4913688653067448,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 58,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 59,
+      "action": "study physics",
+      "reward": 0.2983571744901251,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 60,
+      "action": "study physics",
+      "reward": 0.2675627139797802,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 61,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 62,
+      "action": "revise",
+      "reward": 0.49833006278006997,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 63,
+      "action": "study physics",
+      "reward": 0.3900080255749026,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 64,
+      "action": "study physics",
+      "reward": 0.4386608229854448,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 65,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 66,
+      "action": "study physics",
+      "reward": 0.5091170117775858,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 67,
+      "action": "study physics",
+      "reward": 0.4549714058085017,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 68,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 69,
+      "action": "revise",
+      "reward": 0.29203461756249527,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 70,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 71,
+      "action": "study physics",
+      "reward": 0.34511824533409885,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 72,
+      "action": "study physics",
+      "reward": 0.6223094962158776,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 73,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 74,
+      "action": "revise",
+      "reward": 0.4993287595464146,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 75,
+      "action": "study physics",
+      "reward": 0.4688586243135145,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 76,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 77,
+      "action": "study physics",
+      "reward": 0.49994557952032254,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 78,
+      "action": "study physics",
+      "reward": 0.427786110669858,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 79,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 80,
+      "action": "revise",
+      "reward": 0.5020035116610881,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 81,
+      "action": "study physics",
+      "reward": 0.30153358430597926,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 82,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 83,
+      "action": "study physics",
+      "reward": 0.33642244946857525,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 84,
+      "action": "study physics",
+      "reward": 0.2551593716091294,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 85,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 86,
+      "action": "revise",
+      "reward": 0.299493587975199,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 87,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 88,
+      "action": "study physics",
+      "reward": 0.397350781142952,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 89,
+      "action": "study physics",
+      "reward": 0.6013592892937377,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 90,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 91,
+      "action": "revise",
+      "reward": 0.506814834600743,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 92,
+      "action": "study physics",
+      "reward": 0.34900226997518413,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 93,
+      "action": "study physics",
+      "reward": 0.4427673158317912,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 94,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 95,
+      "action": "study physics",
+      "reward": 0.30101968125529965,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 96,
+      "action": "study physics",
+      "reward": -0.07079520465166306,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 97,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 98,
+      "action": "revise",
+      "reward": 0.49952313562521306,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 99,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 100,
+      "action": "study physics",
+      "reward": 0.504714512377596,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 101,
+      "action": "study physics",
+      "reward": 0.39541222442105906,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 102,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 103,
+      "action": "revise",
+      "reward": 0.506680508302525,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 104,
+      "action": "study physics",
+      "reward": 0.42641108332377736,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 105,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 106,
+      "action": "study physics",
+      "reward": 0.4869997148152053,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 107,
+      "action": "study physics",
+      "reward": 0.4586403919158774,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 108,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 109,
+      "action": "revise",
+      "reward": 0.5095566145383394,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 110,
+      "action": "study physics",
+      "reward": 0.4384714792914451,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 111,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 112,
+      "action": "study physics",
+      "reward": 0.47348014428863516,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 113,
+      "action": "study physics",
+      "reward": 0.4450289751078036,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 114,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 115,
+      "action": "revise",
+      "reward": 0.5116780754632929,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 116,
+      "action": "study physics",
+      "reward": 0.618895837091832,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 117,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 118,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 119,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 120,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 121,
+      "action": "revise",
+      "reward": 0.5133639619219095,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 122,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 123,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 124,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 125,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 126,
+      "action": "revise",
+      "reward": 0.5043639619219095,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 127,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 128,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 129,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 130,
+      "action": "rest",
+      "reward": 0.0,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 131,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 132,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 133,
+      "action": "revise",
+      "reward": 0.5103639619219095,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 134,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 135,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 136,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 137,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 138,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 139,
+      "action": "revise",
+      "reward": 0.5113639619219095,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 140,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 141,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 142,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 143,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 144,
+      "action": "revise",
+      "reward": 0.5123639619219095,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 145,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 146,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 147,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 148,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 149,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 150,
+      "action": "revise",
+      "reward": 0.5133639619219095,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 151,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 152,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 153,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 154,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 155,
+      "action": "revise",
+      "reward": 0.5043639619219095,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 156,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 157,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 158,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 159,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 160,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 161,
+      "action": "revise",
+      "reward": 0.5053639619219095,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 162,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 163,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 164,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 165,
+      "action": "rest",
+      "reward": 0.2,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 166,
+      "action": "mock_test",
+      "reward": 1,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    },
+    {
+      "step": 167,
+      "action": "revise",
+      "reward": 0.3013639619219094,
+      "state": {
+        "energy": 0.16000000000000042,
+        "stress": 0.1,
+        "subjects": {
+          "math": 1.0,
+          "physics": 0.7389142009711636,
+          "chemistry": 0.8629235143434013
+        },
+        "revision_level": 0.3255275039393877,
+        "mock_test_score": 88.85504407730268,
+        "confidence": 0.596403371188788,
+        "forgetting_risk": 0.6744724960606123,
+        "learning_efficiency": 0.8885504407730268,
+        "exam_days_left": 0
+      }
+    }
+  ]
+}
