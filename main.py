@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from environment import StudentLifeEnv
 from tasks import TASKS
+from fastapi.responses import JSONResponse
 
 app = FastAPI(
     title="Adaptive Exam Strategy RL Environment",
@@ -33,28 +34,29 @@ def home():
     }
 
 
-# ---------- RESET (STRICT FORMAT) ----------
+# ---------- RESET (CRITICAL FIX) ----------
 @app.post("/reset")
 def reset():
-    return env.reset()
+    state = env.reset()
+    return JSONResponse(content=dict(state))
 
 
-# ---------- STEP (STRICT FORMAT) ----------
+# ---------- STEP (CRITICAL FIX) ----------
 @app.post("/step")
 def step(req: ActionRequest):
     state, reward, done, _ = env.step(req.action)
 
-    return {
-        "state": state,
+    return JSONResponse(content={
+        "state": dict(state),
         "reward": float(reward),
         "done": bool(done)
-    }
+    })
 
 
 # ---------- STATE ----------
 @app.get("/state")
 def state():
-    return env.state()
+    return JSONResponse(content=dict(env.state()))
 
 
 # ---------- TASKS ----------
@@ -63,13 +65,13 @@ def tasks():
     return TASKS
 
 
-# ---------- FINAL SCORE (SAFE EXTRA) ----------
+# ---------- FINAL SCORE ----------
 @app.get("/final_score")
 def final_score():
     return env.final_score()
 
 
-# ---------- INFO (SAFE EXTRA) ----------
+# ---------- INFO ----------
 @app.get("/info")
 def info():
     return {
