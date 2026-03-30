@@ -1,3 +1,12 @@
+---
+
+title: Adaptive Exam RL Environment
+emoji: 🎓
+colorFrom: blue
+colorTo: green
+sdk: docker
+-----------
+
 # 🎓 Adaptive Engineering Exam Strategy Environment (OpenEnv)
 
 A **multi-factor reinforcement learning environment** that simulates real-world engineering exam preparation.
@@ -5,18 +14,22 @@ An AI agent must learn **optimal study strategies** under constraints of time, e
 
 ---
 
+## 🌐 Live API
+
+👉 https://fomo-ash-adaptive-exam-rl.hf.space/docs
+
+---
+
 ## 🚀 Overview
 
 Preparing for competitive engineering exams (e.g., JEE, GATE) is not just about studying more — it is about **studying smart**.
 
-This environment models that reality.
-
 At each timestep, an agent must decide:
 
-* 📚 Should I study new topics?
-* 🔁 Should I revise to retain knowledge?
-* 🧪 Should I test my understanding?
-* 😴 Should I rest to recover?
+* 📚 Study new topics
+* 🔁 Revise to retain knowledge
+* 🧪 Take mock tests
+* 😴 Rest to recover
 
 All while managing:
 
@@ -30,11 +43,9 @@ All while managing:
 
 ## 🧠 Core Idea
 
-> This is not a simple simulator, it is a **decision-making system with trade-offs**.
+> A strategic decision-making system balancing:
 
-The agent must balance:
-
-```text
+```
 Learning Gain  vs  Retention
 Performance    vs  Fatigue
 Short-term Gain vs Long-term Efficiency
@@ -44,108 +55,31 @@ Short-term Gain vs Long-term Efficiency
 
 ## 🎯 Objective
 
-Maximize overall performance by:
+Maximize exam readiness by:
 
 * Completing syllabus across subjects
-* Maintaining high retention (low forgetting)
-* Achieving strong mock test scores
-* Managing energy and stress effectively
-
----
-
-## 🧩 Environment Design
-
-### 📚 Subject-wise Learning
-
-Instead of a single progress metric, learning is tracked per subject:
-
-```json
-{
-  "subjects": {
-    "math": 0.3,
-    "physics": 0.3,
-    "chemistry": 0.3
-  }
-}
-```
-
-* Learning is **stochastic**
-* Weak subjects are prioritized
-* Diminishing returns apply
-
----
-
-### 🔁 Memory & Forgetting Model
-
-* `revision_level` represents retention strength
-* `forgetting_risk` increases when revision is low
-* Knowledge decays over time
-
-```text
-No revision → memory decay → performance drop
-```
-
----
-
-### ⚡ Energy & Stress System
-
-* Energy decreases with effort (study/test)
-* Stress increases with workload
-* Low energy reduces learning efficiency
-* High stress reduces performance
-
----
-
-### 🧪 Performance Modeling
-
-Mock test scores depend on:
-
-```text
-Subject Mastery + Revision + Stress + Randomness
-```
-
-This ensures:
-
-* No deterministic outcomes
-* Realistic variability
-
----
-
-### 😈 Regret-Based Reward System
-
-The reward function models **efficiency of decisions**:
-
-```text
-Reward =
-+ Learning Gain
-+ Weak Topic Bonus
-+ Performance Gain
-- Effort Cost
-- Stress / Burnout Penalty
-- Inefficient Actions (Regret)
-```
+* Maintaining strong retention
+* Achieving high mock test scores
+* Managing energy and stress efficiently
 
 ---
 
 ## 🎮 Action Space
 
-| Action            | Description                                   |
-| ----------------- | --------------------------------------------- |
-| `study_new_topic` | Learn new concepts (improves subject mastery) |
-| `revise`          | Strengthens memory & reduces forgetting       |
-| `mock_test`       | Evaluates performance                         |
-| `rest`            | Recovers energy, reduces stress               |
-| `skip`            | No productive action (penalty)                |
+| Action          | Description                             |
+| --------------- | --------------------------------------- |
+| study_new_topic | Learn new concepts (improves mastery)   |
+| revise          | Strengthens memory & reduces forgetting |
+| mock_test       | Evaluates performance                   |
+| rest            | Recovers energy, reduces stress         |
+| skip            | No productive action (penalty)          |
 
-### 🧠 Robust Input Handling
+### 🧠 Flexible Inputs
 
-The environment supports flexible inputs:
-
-```text
+```
 "study", "learn" → study_new_topic  
-"exam", "test" → mock_test  
-"sleep", "break" → rest  
-Unknown input → safe penalty (no crash)
+"test", "exam" → mock_test  
+"sleep", "rest" → rest  
 ```
 
 ---
@@ -154,123 +88,162 @@ Unknown input → safe penalty (no crash)
 
 ```json
 {
-  "energy": float (0–1),
-  "stress": float (0–1),
+  "energy": 0-1,
+  "stress": 0-1,
   "subjects": {
-    "math": float (0–1),
-    "physics": float (0–1),
-    "chemistry": float (0–1)
+    "math": 0-1,
+    "physics": 0-1,
+    "chemistry": 0-1
   },
-  "revision_level": float (0–1),
-  "mock_test_score": float (0–100),
-  "confidence": float (0–1),
-  "forgetting_risk": float (0–1),
-  "learning_efficiency": float (0–1),
+  "revision_level": 0-1,
+  "mock_test_score": 0-100,
+  "confidence": 0-1,
+  "forgetting_risk": 0-1,
+  "learning_efficiency": 0-1,
   "exam_days_left": int
 }
 ```
 
 ---
 
-## 🔄 Environment Dynamics
+## 🔁 Environment Dynamics
 
-Each step follows:
+Each step:
 
-```text
-Action → State Update → Metric Update → Reward Calculation
+```
+Action → State Update → Reward → Progress
 ```
 
-### Includes:
+Includes:
 
-* 🎲 Random life events (unexpected disruptions)
-* 📉 Knowledge decay over time
+* 🎲 Random disruptions
+* 📉 Knowledge decay
 * ⚖️ Trade-offs between actions
-* 🔁 Continuous state evolution
+* 🔁 Continuous learning evolution
+
+---
+
+## 😈 Reward Function
+
+```
+Reward =
++ Learning Gain
++ Weak Subject Bonus
++ Performance Gain
+- Effort Cost
+- Stress Penalty
+- Regret (inefficient actions)
+```
 
 ---
 
 ## 🧪 Evaluation System
 
-The environment is evaluated using **multi-level graders**:
+| Task   | Description                   |
+| ------ | ----------------------------- |
+| Easy   | Maximize subject completion   |
+| Medium | Balance completion + revision |
+| Hard   | Optimize full exam readiness  |
 
-### ✅ Easy
-
-* Basic progress (subjects, completion)
-
-### ⚙️ Medium
-
-* Balanced strategy (energy, stress, revision)
-
-### 🔥 Hard
-
-* Overall reward efficiency & long-term performance
-
----
-
-## 🐳 Deployment & API
-
-### Run locally:
-
-```bash
-uvicorn main:app --reload
-```
-
-### Endpoints:
-
-* `GET /reset` → Reset environment
-* `POST /step?action=...` → Take action
-* `GET /state` → Current state
+All graders return scores in **[0.0 – 1.0]**
 
 ---
 
 ## 🤖 Baseline Agent
 
-A rule-based agent is included:
+Run:
 
-* Studies weak topics
-* Revises when needed
+```bash
+python inference.py
+```
+
+Features:
+
+* Focuses on weakest subject
+* Maintains revision
+* Manages energy & stress
 * Takes tests strategically
-* Manages energy
 
-Benchmark results show:
+---
 
-* ✔ Significant improvement over random agent
-* ✔ Stable multi-metric performance
+## 🐳 Run Locally
+
+### FastAPI
+
+```bash
+uvicorn main:app --reload
+```
+
+### Docker
+
+```bash
+docker build -t exam-env .
+docker run -p 7860:7860 exam-env
+```
+
+---
+
+## 🔌 API Endpoints
+
+| Endpoint         | Description       |
+| ---------------- | ----------------- |
+| GET /reset       | Reset environment |
+| POST /step       | Take action       |
+| GET /state       | Current state     |
+| GET /final_score | Final performance |
+| GET /tasks       | Task definitions  |
+
+---
+
+## 📦 OpenEnv Compliance
+
+This environment follows OpenEnv standard:
+
+* ✔ step()
+* ✔ reset()
+* ✔ state()
+* ✔ openenv.yaml
+* ✔ multi-task graders
 
 ---
 
 ## 🧠 Why This Matters
 
-This project models:
+Models:
 
 * Human learning behavior
-* Cognitive limitations
-* Strategic planning under constraints
+* Cognitive constraints
+* Strategic decision-making
 
 ---
 
-## 🔥 What Makes It Unique
+## 🔥 Key Features
 
 * Multi-dimensional state space
-* Realistic learning + forgetting dynamics
+* Subject-wise learning tracking
+* Forgetting + revision system
 * Regret-based reward shaping
-* Robust to noisy inputs
-* Designed for RL benchmarking
+* Real-world constraints simulation
 
 ---
 
-## 🚀 Future Extensions
+## 🚀 Future Work
 
-* Knowledge graph for prerequisites
-* Personalized learning styles
-* LLM-driven tutoring integration
+* Knowledge graph dependencies
+* Personalized learning agents
+* LLM-based tutoring
 * Multi-agent competition
 
 ---
 
-## 📌 Summary
+## ✅ Submission Checklist
 
-> This environment transforms exam preparation into a **strategic decision-making problem**, enabling AI agents to learn **how to learn efficiently**.
+* ✔ OpenEnv API implemented
+* ✔ Docker deployment working
+* ✔ Hugging Face Space live
+* ✔ inference.py included
+* ✔ 3 graders implemented
+* ✔ evaluation scripts added
 
 ---
 
@@ -282,15 +255,4 @@ This project models:
 
 ---
 
-## 📬 Submission
-
-Includes:
-
-* ✅ OpenEnv-compatible API
-* ✅ Docker container
-* ✅ Automated graders
-* ✅ Evaluation scripts
-
----
-
-💡 *Designed to simulate real-world learning — not just optimize scores.*
+💡 *Designed to simulate real-world learning — not just maximize scores.*
