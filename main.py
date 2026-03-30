@@ -16,15 +16,27 @@ env = StudentLifeEnv()
 class ActionRequest(BaseModel):
     action: str
 
+class Observation(BaseModel):
+    energy: float
+    stress: float
+    subjects: dict
+    revision_level: float
+    mock_test_score: float
+    confidence: float
+    forgetting_risk: float
+    learning_efficiency: float
+    exam_days_left: int
+
 
 class StepResponse(BaseModel):
     action: str
     reward: float
     done: bool
-    state: dict
+    state: Observation
     reason: str
     decision_quality: str
     hints: list
+
 
 
 @app.get("/")
