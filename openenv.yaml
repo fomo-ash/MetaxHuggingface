@@ -7,12 +7,19 @@ description: >
 
 version: 1.0
 
-entrypoint: main:app
+entrypoint:
+  module: main
+  app: app
 
 api:
   reset: /reset
   step: /step
   state: /state
+
+tags:
+  - reinforcement-learning
+  - education
+  - exam-strategy
 
 action_space:
   type: discrete
@@ -70,13 +77,17 @@ observation_space:
     exam_days_left:
       type: integer
 
+reward:
+  type: float
+  range: [-1, 1]
+
 tasks:
   - name: easy
-    description: Maximize overall subject completion
+    description: Achieve average subject mastery above 0.8
     grader: graders.easy:grade
 
   - name: medium
-    description: Balance subject completion and revision
+    description: Balance subject mastery and revision level above 0.6
     grader: graders.medium:grade
 
   - name: hard
