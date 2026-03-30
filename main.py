@@ -70,6 +70,27 @@ def tasks():
 def final_score():
     return env.final_score()
 
+# ---------- OPENENV RESET ----------
+@app.post("/openenv/reset")
+def openenv_reset():
+    state = env.reset()
+    return {
+        "observation": state
+    }
+
+
+# ---------- OPENENV STEP ----------
+@app.post("/openenv/step")
+def openenv_step(req: ActionRequest):
+    state, reward, done, _ = env.step(req.action)
+
+    return {
+        "observation": state,
+        "reward": reward,
+        "done": done,
+        "info": {}
+    }
+
 
 # ---------- INFO ----------
 @app.get("/info")
