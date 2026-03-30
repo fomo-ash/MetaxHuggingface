@@ -1,11 +1,4 @@
----
 
-title: Adaptive Exam RL Environment
-emoji: 🎓
-colorFrom: blue
-colorTo: green
-sdk: docker
------------
 
 # 🎓 Adaptive Engineering Exam Strategy Environment (OpenEnv)
 
