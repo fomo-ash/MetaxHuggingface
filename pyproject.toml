@@ -1,0 +1,15 @@
+[project]
+name = "adaptive-exam-rl"
+version = "0.1.0"
+description = "RL environment for adaptive exam strategy optimization"
+authors = [
+    { name = "Ashutosh Badapanda" }
+]
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic"
+]
+
+[tool.openenv]
+env = "environment:StudentLifeEnv"
