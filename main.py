@@ -53,18 +53,9 @@ def home():
         ]
     }
 
-@app.get("/reset")
+@app.post("/reset")
 def reset():
-    state = env.reset()
-    return {
-        "message": "Environment reset",
-        "state": state,
-        "hints": [
-            "Try: study, revise, test, rest",
-            "Use rest when energy is low",
-            "Revise to reduce forgetting risk"
-        ]
-    }
+    return env.reset()
 
 @app.post("/step", response_model=StepResponse)
 def step(req: ActionRequest):
