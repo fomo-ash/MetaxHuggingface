@@ -15,7 +15,6 @@ for step in range(168):
 
     weakest = min(subjects, key=subjects.get)
 
-    # 🔥 Improved strategy
     if state["energy"] < 0.3:
         action = "rest"
 
@@ -26,7 +25,7 @@ for step in range(168):
         action = "revise"
 
     elif subjects[weakest] < 0.7:
-        action = f"study {weakest}"   # flexible input
+        action = f"study {weakest}"   
 
     elif avg_completion < 0.85:
         action = "study"
@@ -40,7 +39,7 @@ for step in range(168):
     if done:
         break
 
-# Scores
+
 easy_score = easy_grade(env)
 medium_score = medium_grade(env)
 hard_score = hard_grade(total_reward, env)

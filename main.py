@@ -12,9 +12,7 @@ app = FastAPI(
 env = StudentLifeEnv()
 
 
-# =========================
-# 🧠 MODELS (IMPORTANT)
-# =========================
+
 class ActionRequest(BaseModel):
     action: str
 
@@ -29,9 +27,6 @@ class StepResponse(BaseModel):
     hints: list
 
 
-# =========================
-# 🏠 HOME
-# =========================
 @app.get("/")
 def home():
     return {
@@ -46,10 +41,6 @@ def home():
         ]
     }
 
-
-# =========================
-# 🔄 RESET
-# =========================
 @app.get("/reset")
 def reset():
     state = env.reset()
@@ -63,10 +54,6 @@ def reset():
         ]
     }
 
-
-# =========================
-# ▶️ STEP
-# =========================
 @app.post("/step", response_model=StepResponse)
 def step(req: ActionRequest):
     state, reward, done, info = env.step(req.action)
@@ -87,33 +74,20 @@ def step(req: ActionRequest):
     }
 
 
-# =========================
-# 📊 STATE
-# =========================
 @app.get("/state")
 def state():
     return env.state()
 
 
-# =========================
-# 🎯 TASKS
-# =========================
 @app.get("/tasks")
 def tasks():
     return TASKS
 
 
-# =========================
-# 🏁 FINAL SCORE
-# =========================
 @app.get("/final_score")
 def final_score():
     return env.final_score()
 
-
-# =========================
-# ℹ️ INFO
-# =========================
 @app.get("/info")
 def info():
     return {

@@ -21,7 +21,7 @@ def run_episode():
         avg_completion = sum(subjects.values()) / len(subjects)
         weakest = min(subjects, key=subjects.get)
 
-        # Same baseline policy (reuse inference logic)
+        
         if state["energy"] < 0.3:
             action = "rest"
 

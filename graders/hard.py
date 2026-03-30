@@ -1,7 +1,6 @@
 def grade(total_reward, env):
     subjects = env.state_data["subjects"]
 
-    # 📊 balance score (penalize uneven learning)
     values = list(subjects.values())
     balance = 1 - (max(values) - min(values))  # smaller gap = better
 

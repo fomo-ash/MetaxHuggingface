@@ -23,7 +23,6 @@ def run_episode():
         avg_completion = sum(subjects.values()) / len(subjects)
         weakest = min(subjects, key=subjects.get)
 
-        # Same baseline policy as inference.py
         if state["energy"] < 0.3:
             action = "rest"
 
@@ -48,7 +47,7 @@ def run_episode():
         if done:
             break
 
-    # grading
+    
     easy_score = easy_grade(env)
     medium_score = medium_grade(env)
     hard_score = hard_grade(total_reward, env)
@@ -96,7 +95,6 @@ def main():
     print(f"Average Medium : {avg_medium:.2f}")
     print(f"Average Hard   : {avg_hard:.2f}")
 
-    # save json
     output = {
         "runs": results,
         "average": {

@@ -7,7 +7,7 @@ from graders.medium import grade as medium_grade
 from graders.hard import grade as hard_grade
 
 
-NUM_EPISODES = 10   # increase for stability
+NUM_EPISODES = 10   
 
 ACTIONS = [
     "study",

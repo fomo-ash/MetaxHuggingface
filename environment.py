@@ -6,6 +6,9 @@ class StudentLifeEnv:
         self.max_steps = 168
         self.reset()
 
+    # -------------------------
+    # RESET
+    # -------------------------
     def reset(self):
         self.step_count = 0
 
@@ -31,12 +34,15 @@ class StudentLifeEnv:
 
         return self.state()
 
+    # -------------------------
+    # STATE
+    # -------------------------
     def state(self):
         return self.state_data
 
-    # =========================
-    # 🧠 REASONING SYSTEM
-    # =========================
+    # -------------------------
+    # REASON GENERATOR
+    # -------------------------
     def generate_reason(self, action, subject, weakest):
         energy = self.state_data["energy"]
         stress = self.state_data["stress"]
@@ -75,16 +81,14 @@ class StudentLifeEnv:
 
         return "Unknown action handled safely"
 
-    # =========================
-    # 🚀 STEP FUNCTION
-    # =========================
+    # -------------------------
+    # STEP
+    # -------------------------
     def step(self, action):
         self.step_count += 1
         reward = 0
 
-        # -------------------------
-        # 🧠 INPUT NORMALIZATION
-        # -------------------------
+        # Normalize action
         if not isinstance(action, str):
             action = "skip"
         else:
@@ -103,9 +107,7 @@ class StudentLifeEnv:
         else:
             action = "unknown"
 
-        # -------------------------
-        # 🚨 CRITICAL STATE
-        # -------------------------
+        # Critical state handling
         if self.state_data["energy"] <= 0 or self.state_data["stress"] >= 1:
             if action == "rest":
                 self.state_data["energy"] += 0.3
@@ -124,25 +126,17 @@ class StudentLifeEnv:
                 "decision_quality": "poor"
             }
 
-        # -------------------------
-        # 🎲 RANDOM EVENT
-        # -------------------------
+        # Random life disturbance
         if random.random() < 0.05:
             self.state_data["energy"] -= 0.1
             self.state_data["stress"] += 0.1
             reward -= 0.2
 
         subjects = self.state_data["subjects"]
-
-        # ✅ correct weakest BEFORE update
         weakest = min(subjects, key=subjects.get)
-
-        # bias toward weakest
         subject = weakest if random.random() < 0.7 else random.choice(list(subjects.keys()))
 
-        # -------------------------
-        # 🎯 ACTIONS
-        # -------------------------
+        # ACTION EFFECTS
         if action == "study_new_topic":
             self.state_data["energy"] -= 0.1
             self.state_data["stress"] += 0.05
@@ -172,7 +166,6 @@ class StudentLifeEnv:
 
             score = avg * 100
             score *= (1 - self.state_data["stress"] * 0.2)
-
             score += random.uniform(-5, 10)
             score = max(0, min(100, score))
 
@@ -195,9 +188,7 @@ class StudentLifeEnv:
             reward -= 0.2
             self.state_data["stress"] += 0.05
 
-        # -------------------------
-        # 🔥 DECAY
-        # -------------------------
+        # Decay
         if action != "revise":
             self.state_data["revision_level"] *= 0.985
 
@@ -209,7 +200,6 @@ class StudentLifeEnv:
         )
 
         self.state_data["forgetting_risk"] += 0.005
-
         self.state_data["learning_efficiency"] = self.state_data["mock_test_score"] / 100
 
         self.state_data["confidence"] = (
@@ -217,23 +207,16 @@ class StudentLifeEnv:
             0.6 * avg
         )
 
-        # -------------------------
-        # 😈 REGRET
-        # -------------------------
+        # Regret penalty
         if action in ["study_new_topic", "revise", "mock_test"]:
             effort = max(0, 1 - self.state_data["energy"])
             regret = effort - avg
             regret = max(-0.5, min(0.5, regret))
             reward -= regret * 0.05
 
-        # -------------------------
-        # ⚡ ENERGY SCALING
-        # -------------------------
         reward *= max(0.2, self.state_data["energy"])
 
-        # -------------------------
-        # 🔒 CLAMP
-        # -------------------------
+        # Clamp values
         for sub in subjects:
             subjects[sub] = max(0, min(1, subjects[sub]))
 
@@ -242,9 +225,7 @@ class StudentLifeEnv:
         self.state_data["revision_level"] = max(0, min(1, self.state_data["revision_level"]))
         self.state_data["forgetting_risk"] = max(0, min(1, self.state_data["forgetting_risk"]))
 
-        # -------------------------
-        # ⏳ TIME
-        # -------------------------
+        # Time progression
         if self.step_count % 24 == 0:
             self.state_data["exam_days_left"] -= 1
 
@@ -255,14 +236,8 @@ class StudentLifeEnv:
 
         done = self.step_count >= self.max_steps or self.state_data["exam_days_left"] <= 0
 
-        # -------------------------
-        # 🧠 FINAL OUTPUT
-        # -------------------------
+        # Reason + quality
         reason = self.generate_reason(action, subject, weakest)
-
-        # 🎯 DECISION QUALITY
-        energy = self.state_data["energy"]
-        stress = self.state_data["stress"]
 
         if reward > 0.2:
             decision_quality = "good"
@@ -271,20 +246,39 @@ class StudentLifeEnv:
         else:
             decision_quality = "poor"
 
-        # overrides
-        if action == "rest" and energy < 0.3:
-            decision_quality = "good"
-
-        if action == "revise" and self.state_data["revision_level"] < 0.3:
-            decision_quality = "good"
-
-        if action == "study_new_topic" and energy < 0.2:
-            decision_quality = "poor"
-
-        if stress > 0.85 and action != "rest":
-            decision_quality = "poor"
-
         return self.state(), reward, done, {
             "reason": reason,
             "decision_quality": decision_quality
         }
+
+    def final_score(self):
+        subjects = self.state_data["subjects"]
+        avg = sum(subjects.values()) / len(subjects)
+
+        efficiency = avg * self.state_data["energy"] * (1 - self.state_data["stress"])
+
+        return {
+            "scores": {
+                "average_subject_mastery": avg,
+                "revision_level": self.state_data["revision_level"],
+                "mock_test_score": self.state_data["mock_test_score"] / 100,
+                "confidence": self.state_data["confidence"],
+                "efficiency_score": efficiency
+            },
+            "health": {
+                "energy": self.state_data["energy"],
+                "stress": self.state_data["stress"],
+                "forgetting_risk": self.state_data["forgetting_risk"]
+            },
+            "final_assessment": self._compute_final_grade(avg)
+        }
+
+    def _compute_final_grade(self, avg):
+        if avg > 0.85:
+            return "Excellent"
+        elif avg > 0.7:
+            return "Good"
+        elif avg > 0.5:
+            return "Average"
+        else:
+            return "Poor"
