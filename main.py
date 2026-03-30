@@ -2,12 +2,11 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from environment import StudentLifeEnv
 from tasks import TASKS
-from fastapi.responses import JSONResponse
 
 app = FastAPI(
     title="Adaptive Exam Strategy RL Environment",
     description="RL environment for optimizing student exam preparation strategies",
-    version="1.1"
+    version="1.2"
 )
 
 env = StudentLifeEnv()
@@ -18,45 +17,48 @@ class ActionRequest(BaseModel):
     action: str
 
 
-# ---------- HOME ----------
+# ---------- ROOT (CRITICAL FOR VALIDATOR) ----------
 @app.get("/")
-def home():
+@app.post("/")
+def root():
+    state = env.reset()
     return {
-        "message": "Adaptive Exam Strategy RL Environment",
-        "endpoints": [
-            "/reset",
-            "/step",
-            "/state",
-            "/tasks",
-            "/final_score",
-            "/info"
-        ]
+        "observation": state
     }
 
 
-# ---------- RESET (CRITICAL FIX) ----------
+# ---------- RESET (ALL COMPATIBLE ROUTES) ----------
 @app.post("/reset")
-def reset():
+@app.post("/reset/")
+@app.post("/openenv/reset")
+@app.post("/openenv/reset/")
+def reset_all():
     state = env.reset()
-    return JSONResponse(content=dict(state))
+    return {
+        "observation": state
+    }
 
 
-# ---------- STEP (CRITICAL FIX) ----------
+# ---------- STEP (ALL COMPATIBLE ROUTES) ----------
 @app.post("/step")
-def step(req: ActionRequest):
+@app.post("/step/")
+@app.post("/openenv/step")
+@app.post("/openenv/step/")
+def step_all(req: ActionRequest):
     state, reward, done, _ = env.step(req.action)
 
-    return JSONResponse(content={
-        "state": dict(state),
+    return {
+        "observation": state,
         "reward": float(reward),
-        "done": bool(done)
-    })
+        "done": bool(done),
+        "info": {}
+    }
 
 
 # ---------- STATE ----------
 @app.get("/state")
 def state():
-    return JSONResponse(content=dict(env.state()))
+    return env.state()
 
 
 # ---------- TASKS ----------
@@ -69,27 +71,6 @@ def tasks():
 @app.get("/final_score")
 def final_score():
     return env.final_score()
-
-# ---------- OPENENV RESET ----------
-@app.post("/openenv/reset")
-def openenv_reset():
-    state = env.reset()
-    return {
-        "observation": state
-    }
-
-
-# ---------- OPENENV STEP ----------
-@app.post("/openenv/step")
-def openenv_step(req: ActionRequest):
-    state, reward, done, _ = env.step(req.action)
-
-    return {
-        "observation": state,
-        "reward": reward,
-        "done": done,
-        "info": {}
-    }
 
 
 # ---------- INFO ----------
