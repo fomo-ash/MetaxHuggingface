@@ -12,33 +12,12 @@ app = FastAPI(
 env = StudentLifeEnv()
 
 
-
+# ---------- REQUEST MODEL ----------
 class ActionRequest(BaseModel):
     action: str
 
-class Observation(BaseModel):
-    energy: float
-    stress: float
-    subjects: dict
-    revision_level: float
-    mock_test_score: float
-    confidence: float
-    forgetting_risk: float
-    learning_efficiency: float
-    exam_days_left: int
 
-
-class StepResponse(BaseModel):
-    action: str
-    reward: float
-    done: bool
-    state: Observation
-    reason: str
-    decision_quality: str
-    hints: list
-
-
-
+# ---------- HOME ----------
 @app.get("/")
 def home():
     return {
@@ -53,50 +32,50 @@ def home():
         ]
     }
 
+
+# ---------- RESET (STRICT FORMAT) ----------
 @app.post("/reset")
 def reset():
     return env.reset()
 
-@app.post("/step", response_model=StepResponse)
+
+# ---------- STEP (STRICT FORMAT) ----------
+@app.post("/step")
 def step(req: ActionRequest):
-    state, reward, done, info = env.step(req.action)
+    state, reward, done, _ = env.step(req.action)
 
     return {
-        "action": req.action,
-        "reward": reward,
-        "done": done,
         "state": state,
-        "reason": info.get("reason", ""),
-        "decision_quality": info.get("decision_quality", "neutral"),
-        "hints": [
-            "study → improve subjects",
-            "revise → reduce forgetting",
-            "test → evaluate performance",
-            "rest → recover energy"
-        ] if env.step_count < 3 else []
+        "reward": float(reward),
+        "done": bool(done)
     }
 
 
+# ---------- STATE ----------
 @app.get("/state")
 def state():
     return env.state()
 
 
+# ---------- TASKS ----------
 @app.get("/tasks")
 def tasks():
     return TASKS
 
 
+# ---------- FINAL SCORE (SAFE EXTRA) ----------
 @app.get("/final_score")
 def final_score():
     return env.final_score()
 
+
+# ---------- INFO (SAFE EXTRA) ----------
 @app.get("/info")
 def info():
     return {
         "description": "RL environment simulating student exam preparation",
         "actions": [
-            "study",
+            "study_new_topic",
             "revise",
             "mock_test",
             "rest",
