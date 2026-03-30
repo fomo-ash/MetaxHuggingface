@@ -1,3 +1,12 @@
+---
+title: Adaptive Exam RL
+emoji: 🤖
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 7860
+pinned: false
+---
 
 
 # 🎓 Adaptive Engineering Exam Strategy Environment (OpenEnv)
