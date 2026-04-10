@@ -1,7 +1,10 @@
 import sys
 import os
 import time
-from openai import OpenAI
+try:
+    from openai import OpenAI
+except ImportError:
+    OpenAI = None
 from environment import StudentLifeEnv
 
 # ================== CONFIG ==================
@@ -11,8 +14,11 @@ API_KEY = os.getenv("HF_TOKEN")
 
 # Initialize client with a check for API_KEY
 client = None
-if API_KEY:
-    client = OpenAI(base_url=API_BASE_URL, api_key=API_KEY)
+if API_KEY and OpenAI:
+    try:
+        client = OpenAI(base_url=API_BASE_URL, api_key=API_KEY)
+    except Exception:
+        client = None
 
 # ================== LOGGING ==================
 # CRITICAL: These must be printed to stdout and flushed immediately
