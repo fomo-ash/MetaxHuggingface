@@ -1,5 +1,6 @@
 import sys
 import os
+import time
 from openai import OpenAI
 from environment import StudentLifeEnv
 
@@ -8,12 +9,13 @@ API_BASE_URL = os.getenv("API_BASE_URL", "https://router.huggingface.co/v1")
 MODEL_NAME = os.getenv("MODEL_NAME", "Qwen/Qwen2.5-7B-Instruct")
 API_KEY = os.getenv("HF_TOKEN")
 
-client = OpenAI(
-    base_url=API_BASE_URL,
-    api_key=API_KEY
-)
+# Initialize client with a check for API_KEY
+client = None
+if API_KEY:
+    client = OpenAI(base_url=API_BASE_URL, api_key=API_KEY)
 
 # ================== LOGGING ==================
+# CRITICAL: These must be printed to stdout and flushed immediately
 def log_start():
     print("[START] task=student_exam_strategy env=StudentLifeEnv model=optimized-hybrid-agent", flush=True)
 
@@ -31,110 +33,73 @@ def fallback_policy(state):
     avg_completion = sum(subjects.values()) / len(subjects)
     weakest = min(subjects, key=subjects.get)
 
-    # 🔥 Reduced unnecessary rest
     if state["energy"] < 0.2:
         return "rest"
     elif state["stress"] > 0.8:
         return "rest"
-
-    # Build foundation first
     elif state["revision_level"] < 0.3:
         return "revise"
-
-    # Improve weakest subject
     elif subjects[weakest] < 0.7:
         return f"study {weakest}"
-
-    # 🔥 Earlier switch to high-reward phase
     elif avg_completion < 0.75:
         return "study"
-
-    # 🔥 Maximize reward
     else:
         return "mock_test"
 
-# ================== LLM DECISION ==================
+# ================== ACTION SELECTION ==================
 def get_action_from_model(state):
+    if not client:
+        return fallback_policy(state)
+        
     try:
-        prompt = f"""
-You are a student planning strategy agent.
-
-Current state:
-Subjects: {state['subjects']}
-Energy: {state['energy']}
-Stress: {state['stress']}
-Revision: {state['revision_level']}
-
-Choose ONE action:
-rest, revise, study <subject>, study, mock_test
-
-Maximize long-term score.
-Output ONLY the action.
-"""
-
+        prompt = f"Subjects: {state['subjects']}, Energy: {state['energy']}, Stress: {state['stress']}. Choose: rest, revise, study, or mock_test."
         response = client.chat.completions.create(
             model=MODEL_NAME,
-            messages=[
-                {"role": "system", "content": "You are an optimal strategy agent."},
-                {"role": "user", "content": prompt}
-            ],
-            temperature=0.3,
-            max_tokens=20
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=10,
+            timeout=5.0 # Prevent hanging
         )
-
-        action = response.choices[0].message.content.strip()
-
+        action = response.choices[0].message.content.strip().lower()
         valid_actions = ["rest", "revise", "study", "mock_test"]
-        if action in valid_actions or action.startswith("study"):
-            return action
-
-    except Exception as e:
-        print(f"[DEBUG] Model error: {e}")
-
-    # 🔥 ALWAYS FALL BACK SAFELY
+        if any(v in action for v in valid_actions):
+            # Clean up the action string to match env expectations
+            for v in valid_actions:
+                if v in action: return v
+    except Exception:
+        pass
     return fallback_policy(state)
 
 # ================== MAIN ==================
 def main():
     env = StudentLifeEnv()
     state = env.reset()
-    
     rewards = []
     steps_taken = 0
     max_steps = env.max_steps
 
-    log_start()
+    log_start() # Mandatory
 
     try:
         for step in range(1, max_steps + 1):
             steps_taken = step
-
-            # HYBRID ACTION
             action = get_action_from_model(state)
-
-            # ENV STEP
+            
             state, reward, done, _ = env.step(action)
             rewards.append(reward)
-
-            # LOG
             log_step(step, action, reward, done)
 
             if done:
                 break
 
-        # FINAL SCORE
         final_stats = env.final_score()
         score = final_stats["scores"]["average_subject_mastery"]
         success = score >= 0.6
 
     except Exception as e:
-        log_step(steps_taken, "error", 0.00, True, error=str(e))
-        success = False
-        score = 0.0
-
+        log_step(steps_taken, "error", 0.0, True, error=str(e))
+        success, score = False, 0.0
     finally:
-        log_end(success, steps_taken, score, rewards)
+        log_end(success, steps_taken, score, rewards) # Mandatory
 
-# ================== RUN ==================
 if __name__ == "__main__":
     main()

@@ -1,18 +1,13 @@
 import random
 import copy
 
-
 class StudentLifeEnv:
     def __init__(self):
         self.max_steps = 168
         self.reset()
 
-    # -------------------------
-    # RESET
-    # -------------------------
     def reset(self):
         self.step_count = 0
-
         self.state_data = {
             "energy": 1.0,
             "stress": 0.2,
@@ -28,18 +23,11 @@ class StudentLifeEnv:
             "learning_efficiency": 0.4,
             "exam_days_left": 7
         }
-
         return self.state()
 
-    # -------------------------
-    # STATE
-    # -------------------------
     def state(self):
         return copy.deepcopy(self.state_data)
 
-    # -------------------------
-    # STEP
-    # -------------------------
     def step(self, action):
         self.step_count += 1
         reward = 0
@@ -49,6 +37,7 @@ class StudentLifeEnv:
         else:
             action = action.lower().strip()
 
+        # Action mapping
         if "study" in action:
             action = "study_new_topic"
         elif "revise" in action or "review" in action:
@@ -64,22 +53,35 @@ class StudentLifeEnv:
         weakest = min(subjects, key=subjects.get)
         subject = weakest if random.random() < 0.7 else random.choice(list(subjects.keys()))
 
+        # --- LOGIC GATES FOR ENERGY ---
+        
         if action == "study_new_topic":
-            self.state_data["energy"] -= 0.1
-            self.state_data["stress"] += 0.05
-            progress = random.uniform(0.02, 0.05)
-            subjects[subject] += progress
-            reward += progress * 10
+            if self.state_data["energy"] > 0:
+                self.state_data["energy"] -= 0.1
+                self.state_data["stress"] += 0.05
+                progress = random.uniform(0.02, 0.05)
+                subjects[subject] += progress
+                reward += progress * 10
+            else:
+                # Exhaustion Penalty: No progress, high stress increase
+                self.state_data["stress"] += 0.15 
+                reward -= 0.5 
 
         elif action == "revise":
-            self.state_data["energy"] -= 0.08
-            self.state_data["revision_level"] += 0.05
-            reward += 0.6
+            if self.state_data["energy"] > 0:
+                self.state_data["energy"] -= 0.08
+                self.state_data["revision_level"] += 0.05
+                reward += 0.6
+            else:
+                self.state_data["stress"] += 0.1
+                reward -= 0.3
 
         elif action == "mock_test":
+            # Mock tests are also draining; half effectiveness if tired
+            energy_multiplier = 1.0 if self.state_data["energy"] > 0.2 else 0.5
             self.state_data["energy"] -= 0.1
             avg = sum(subjects.values()) / len(subjects)
-            score = avg * 100
+            score = (avg * 100) * energy_multiplier
             self.state_data["mock_test_score"] = score
             reward += score / 50
 
@@ -92,7 +94,7 @@ class StudentLifeEnv:
             self.state_data["stress"] += 0.1
             reward -= 0.5
 
-        # clamp
+        # Clamp values to valid ranges [0, 1]
         for sub in subjects:
             subjects[sub] = max(0, min(1, subjects[sub]))
 
@@ -100,29 +102,22 @@ class StudentLifeEnv:
         self.state_data["stress"] = max(0, min(1, self.state_data["stress"]))
 
         reward = max(-1, min(1, reward))
-
         done = self.step_count >= self.max_steps
 
         return self.state(), reward, done, {}
 
-    # -------------------------
-    # FINAL SCORE (FIXED)
-    # -------------------------
     def final_score(self):
         subjects = self.state_data.get("subjects", {})
-
         if not subjects:
             return {"error": "no data"}
 
         avg = sum(subjects.values()) / len(subjects)
-
         energy = float(self.state_data.get("energy", 0))
         stress = float(self.state_data.get("stress", 0))
         revision = float(self.state_data.get("revision_level", 0))
         mock_score = float(self.state_data.get("mock_test_score", 0))
-        confidence = float(self.state_data.get("confidence", 0))
-        forgetting = float(self.state_data.get("forgetting_risk", 0))
-
+        
+        # Efficiency is zero if student is totally burnt out
         efficiency = avg * energy * (1 - stress)
 
         return {
@@ -130,23 +125,17 @@ class StudentLifeEnv:
                 "average_subject_mastery": avg,
                 "revision_level": revision,
                 "mock_test_score": mock_score / 100,
-                "confidence": confidence,
                 "efficiency_score": efficiency
             },
             "health": {
                 "energy": energy,
-                "stress": stress,
-                "forgetting_risk": forgetting
+                "stress": stress
             },
             "final_assessment": self._compute_final_grade(avg)
         }
 
     def _compute_final_grade(self, avg):
-        if avg > 0.8:
-            return "Excellent"
-        elif avg > 0.6:
-            return "Good"
-        elif avg > 0.4:
-            return "Average"
-        else:
-            return "Needs Improvement"
+        if avg > 0.8: return "Excellent"
+        if avg > 0.6: return "Good"
+        if avg > 0.4: return "Average"
+        return "Needs Improvement"
