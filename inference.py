@@ -2,29 +2,21 @@ import sys
 import os
 import time
 
-# Safe import
-try:
-    from openai import OpenAI
-except ImportError:
-    OpenAI = None
-
+from openai import OpenAI
 from environment import StudentLifeEnv
 
 # ================== CONFIG ==================
-API_BASE_URL = os.environ.get("API_BASE_URL")
-API_KEY = os.environ.get("API_KEY")
+# STRICT: must use os.environ[] (not .get)
+API_BASE_URL = os.environ["API_BASE_URL"]
+API_KEY = os.environ["API_KEY"]
 MODEL_NAME = os.environ.get("MODEL_NAME", "gpt-3.5-turbo")
 
 # ================== CLIENT ==================
-client = None
-try:
-    if OpenAI:
-        client = OpenAI(
-            base_url=API_BASE_URL,
-            api_key=API_KEY
-        )
-except Exception:
-    client = None
+# STRICT: no fallback here
+client = OpenAI(
+    base_url=API_BASE_URL,
+    api_key=API_KEY
+)
 
 # ================== LOGGING ==================
 def log_start():
@@ -59,9 +51,6 @@ def fallback_policy(state):
 
 # ================== ACTION SELECTION ==================
 def get_action_from_model(state):
-    if not client:
-        return fallback_policy(state)
-
     try:
         prompt = f"Subjects: {state['subjects']}, Energy: {state['energy']}, Stress: {state['stress']}. Choose: rest, revise, study, or mock_test."
 
@@ -93,20 +82,15 @@ def main():
 
     log_start()
 
-    # 🔥 DEBUG (safe for evaluator)
-    print(f"[DEBUG] API_BASE_URL={API_BASE_URL}", flush=True)
-    print(f"[DEBUG] API_KEY_PRESENT={API_KEY is not None}", flush=True)
-
-    # 🔥 FORCE API CALL (CRITICAL)
+    # 🔥 MANDATORY: FORCE API CALL (no conditions)
     try:
-        if client:
-            client.chat.completions.create(
-                model=MODEL_NAME,
-                messages=[{"role": "user", "content": "Hello"}],
-                max_tokens=5
-            )
-    except Exception:
-        pass
+        client.chat.completions.create(
+            model=MODEL_NAME,
+            messages=[{"role": "user", "content": "Hello"}],
+            max_tokens=5
+        )
+    except Exception as e:
+        print(f"[DEBUG] API call failed: {e}", flush=True)
 
     try:
         for step in range(1, max_steps + 1):
