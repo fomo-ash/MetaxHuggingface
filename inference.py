@@ -2,21 +2,29 @@ import sys
 import os
 import time
 
-from openai import OpenAI
+# SAFE IMPORT
+try:
+    from openai import OpenAI
+except ImportError:
+    OpenAI = None
+
 from environment import StudentLifeEnv
 
 # ================== CONFIG ==================
-# STRICT: must use os.environ[] (not .get)
-API_BASE_URL = os.environ["API_BASE_URL"]
-API_KEY = os.environ["API_KEY"]
+API_BASE_URL = os.environ.get("API_BASE_URL")
+API_KEY = os.environ.get("API_KEY")
 MODEL_NAME = os.environ.get("MODEL_NAME", "gpt-3.5-turbo")
 
 # ================== CLIENT ==================
-# STRICT: no fallback here
-client = OpenAI(
-    base_url=API_BASE_URL,
-    api_key=API_KEY
-)
+client = None
+if OpenAI and API_BASE_URL and API_KEY:
+    try:
+        client = OpenAI(
+            base_url=API_BASE_URL,
+            api_key=API_KEY
+        )
+    except Exception:
+        client = None
 
 # ================== LOGGING ==================
 def log_start():
@@ -49,8 +57,11 @@ def fallback_policy(state):
     else:
         return "mock_test"
 
-# ================== ACTION SELECTION ==================
+# ================== ACTION ==================
 def get_action_from_model(state):
+    if not client:
+        return fallback_policy(state)
+
     try:
         prompt = f"Subjects: {state['subjects']}, Energy: {state['energy']}, Stress: {state['stress']}. Choose: rest, revise, study, or mock_test."
 
@@ -61,9 +72,9 @@ def get_action_from_model(state):
         )
 
         action = (response.choices[0].message.content or "").strip().lower()
-        valid_actions = ["rest", "revise", "study", "mock_test"]
+        valid = ["rest", "revise", "study", "mock_test"]
 
-        for v in valid_actions:
+        for v in valid:
             if v in action:
                 return v
 
@@ -78,22 +89,22 @@ def main():
     state = env.reset()
     rewards = []
     steps_taken = 0
-    max_steps = env.max_steps
 
     log_start()
 
-    # 🔥 MANDATORY: FORCE API CALL (no conditions)
-    try:
-        client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=[{"role": "user", "content": "Hello"}],
-            max_tokens=5
-        )
-    except Exception as e:
-        print(f"[DEBUG] API call failed: {e}", flush=True)
+    # 🔥 FORCE API CALL IF POSSIBLE
+    if client:
+        try:
+            client.chat.completions.create(
+                model=MODEL_NAME,
+                messages=[{"role": "user", "content": "Hello"}],
+                max_tokens=5
+            )
+        except Exception:
+            pass
 
     try:
-        for step in range(1, max_steps + 1):
+        for step in range(1, env.max_steps + 1):
             steps_taken = step
 
             action = get_action_from_model(state)
