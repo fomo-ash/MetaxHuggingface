@@ -67,11 +67,10 @@ def tasks():
     return {
         name: {
             "goal": task["goal"],
-            "grader": "exists"   # 👈 IMPORTANT
+            "grader": True   
         }
         for name, task in TASKS.items()
     }
-
 # ---------- FINAL SCORE ----------
 @app.get("/final_score")
 def final_score():
