@@ -1,25 +1,31 @@
+def clamp(x):
+    return max(0.01, min(0.99, float(x)))
+
+
 TASKS = {
+
     "easy": {
         "goal": "Reach average subject mastery above 0.6",
-        "grader": lambda scores: min(max(scores.get("average_subject_mastery", 0.0), 0.01), 0.99)
+
+        "grader": lambda scores: clamp(
+            scores.get("average_subject_mastery", 0)
+        )
     },
 
     "medium": {
-        "goal": "Maintain low stress (<0.5) while achieving good performance",
-        "grader": lambda scores: min(
-            max(
-                (1 - scores.get("stress_level", 1.0)) * scores.get("average_subject_mastery", 0.0),
-                0.01
-            ),
-            0.99
+        "goal": "Maintain low stress and good performance",
+
+        "grader": lambda scores: clamp(
+            scores.get("average_subject_mastery", 0) *
+            (1 - scores.get("revision_level", 0))
         )
     },
 
     "hard": {
-        "goal": "Maximize performance under constraints (high score + balanced state)",
-        "grader": lambda scores: min(
-            max(scores.get("efficiency_score", 0.0), 0.01),
-            0.99
+        "goal": "Maximize efficiency under constraints",
+
+        "grader": lambda scores: clamp(
+            scores.get("efficiency_score", 0)
         )
     }
 }
