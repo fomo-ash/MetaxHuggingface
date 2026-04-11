@@ -2,8 +2,6 @@ def clamp(x):
     return max(0.01, min(0.99, float(x)))
 
 
-# -------- GRADERS --------
-
 def easy_grader(scores):
     return clamp(scores.get("average_subject_mastery", 0))
 
@@ -17,8 +15,6 @@ def medium_grader(scores):
 def hard_grader(scores):
     return clamp(scores.get("efficiency_score", 0))
 
-
-# -------- TASKS --------
 
 TASKS = {
     "easy": {
