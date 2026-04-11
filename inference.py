@@ -10,7 +10,7 @@ API_BASE_URL = os.environ["API_BASE_URL"]
 
 API_KEY = os.environ.get("HF_TOKEN") or os.environ["API_KEY"]
 
-MODEL_NAME = os.environ["MODEL_NAME"]
+MODEL_NAME = os.environ.get("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")
 
 # ================== CLIENT ==================
 client = OpenAI(
