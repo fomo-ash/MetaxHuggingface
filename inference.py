@@ -6,13 +6,13 @@ from openai import OpenAI
 from environment import StudentLifeEnv
 
 # ================== CONFIG ==================
-# MUST use environment variables (injected by evaluator)
 API_BASE_URL = os.environ["API_BASE_URL"]
-API_KEY = os.environ["API_KEY"]
-MODEL_NAME = os.environ.get("MODEL_NAME", "gpt-3.5-turbo")
+
+API_KEY = os.environ.get("HF_TOKEN") or os.environ["API_KEY"]
+
+MODEL_NAME = os.environ["MODEL_NAME"]
 
 # ================== CLIENT ==================
-# FORCE initialization (no fallback)
 client = OpenAI(
     base_url=API_BASE_URL,
     api_key=API_KEY
