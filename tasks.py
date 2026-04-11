@@ -2,27 +2,20 @@ def clamp(x):
     return max(0.01, min(0.99, float(x)))
 
 
-# -------------------------
-# 🔥 GRADER FUNCTIONS
-# -------------------------
-
 def easy_grader(scores):
     return clamp(scores.get("average_subject_mastery", 0))
 
 
 def medium_grader(scores):
-    avg = scores.get("average_subject_mastery", 0)
-    revision = scores.get("revision_level", 0)
-    return clamp(avg * (1 - revision))
+    return clamp(
+        scores.get("average_subject_mastery", 0) *
+        (1 - scores.get("revision_level", 0))
+    )
 
 
 def hard_grader(scores):
     return clamp(scores.get("efficiency_score", 0))
 
-
-# -------------------------
-# 🔥 TASKS
-# -------------------------
 
 TASKS = {
     "easy": {

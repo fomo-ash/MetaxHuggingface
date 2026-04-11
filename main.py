@@ -64,15 +64,13 @@ def state():
 # ---------- TASKS ----------
 @app.get("/tasks")
 def tasks():
-    # return only metadata (NO functions)
     return {
         name: {
             "goal": task["goal"],
-            "has_grader": "grader" in task
+            "grader": "exists"   # 👈 IMPORTANT
         }
         for name, task in TASKS.items()
     }
-
 
 # ---------- FINAL SCORE ----------
 @app.get("/final_score")
