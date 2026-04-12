@@ -65,11 +65,11 @@ def state():
 @app.get("/tasks")
 def tasks():
     return {
-        name: {
+        task["name"]: {
             "goal": task["goal"],
-            "grader": True   
+            "grader": True
         }
-        for name, task in TASKS.items()
+        for task in TASKS
     }
 # ---------- FINAL SCORE ----------
 @app.get("/final_score")

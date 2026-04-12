@@ -16,17 +16,20 @@ def hard_grader(scores):
     return clamp(scores.get("efficiency_score", 0))
 
 
-TASKS = {
-    "easy": {
+TASKS = [
+    {
+        "name": "easy",
         "goal": "Reach average subject mastery above 0.6",
         "grader": easy_grader
     },
-    "medium": {
+    {
+        "name": "medium",
         "goal": "Maintain low stress and good performance",
         "grader": medium_grader
     },
-    "hard": {
+    {
+        "name": "hard",
         "goal": "Maximize efficiency under constraints",
         "grader": hard_grader
     }
-}
+]
