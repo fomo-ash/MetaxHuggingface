@@ -67,7 +67,7 @@ def tasks():
     return {
         task["name"]: {
             "goal": task["goal"],
-            "grader": True
+            "grader_fn": True
         }
         for task in TASKS
     }
