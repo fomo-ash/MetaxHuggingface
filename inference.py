@@ -47,7 +47,6 @@ def get_action_from_model(state, step_count, max_steps):
         return "mock_test" if step_count % 12 == 0 else "revise"
 
 
-# ================== MAIN ==================
 def main():
 
     # Ensure API call (required by validator)
@@ -60,7 +59,7 @@ def main():
     except Exception:
         pass
 
-    # 🔥 LOOP THROUGH TASKS (CRITICAL FIX)
+    # 🔥 LOOP THROUGH TASKS
     for task in TASKS:
 
         env = StudentLifeEnv()
@@ -69,7 +68,6 @@ def main():
         rewards = []
         steps_taken = 0
 
-        # 🔥 CORRECT START LOG
         print(f"[START] task={task['name']} env=StudentLifeEnv model=optimized-llm-agent", flush=True)
 
         try:
@@ -86,11 +84,14 @@ def main():
                 if done:
                     break
 
-            # 🔥 USE GRADER (NOT final_score)
+            # ✅ USE GRADER
             score = task["grader"](env)
 
-            # Clamp score
-            score = max(0.0, min(1.0, score))
+            # 🔥 STRICT RANGE FIX (MOST IMPORTANT LINE)
+            if score <= 0.0:
+                score = 0.01
+            elif score >= 1.0:
+                score = 0.99
 
             success = score >= 0.3
 
