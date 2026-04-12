@@ -1,8 +1,8 @@
-def grade(total_reward, env):
+def hard_grader(env):
     subjects = env.state_data["subjects"]
 
     values = list(subjects.values())
-    balance = 1 - (max(values) - min(values))  # smaller gap = better
+    balance = 1 - (max(values) - min(values))
 
     avg_completion = sum(values) / len(values)
     mock = env.state_data["mock_test_score"] / 100
