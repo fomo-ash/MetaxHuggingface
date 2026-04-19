@@ -8,7 +8,7 @@ from graders.medium import grade as medium_grade
 from graders.hard import grade as hard_grade
 
 
-NUM_RUNS = 8   # 5–10 runs recommended
+NUM_RUNS = 8
 
 
 def run_episode():
@@ -47,7 +47,6 @@ def run_episode():
         if done:
             break
 
-    
     easy_score = easy_grade(env)
     medium_score = medium_grade(env)
     hard_score = hard_grade(total_reward, env)
@@ -80,7 +79,6 @@ def main():
             f"Hard: {result['hard']:.2f}"
         )
 
-    # averages
     avg_reward = statistics.mean(r["total_reward"] for r in results)
     avg_easy = statistics.mean(r["easy"] for r in results)
     avg_medium = statistics.mean(r["medium"] for r in results)

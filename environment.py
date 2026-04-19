@@ -9,11 +9,9 @@ class StudentLifeEnv:
         self.tasks = TASKS
         self.reset()
 
-    # -------- TASK ACCESS (REQUIRED BY VALIDATOR) --------
     def get_tasks(self):
         return self.tasks
 
-    # -------- RESET --------
     def reset(self):
         self.step_count = 0
         self.state_data = {
@@ -33,16 +31,13 @@ class StudentLifeEnv:
         }
         return self.state()
 
-    # -------- STATE --------
     def state(self):
         return copy.deepcopy(self.state_data)
 
-    # -------- STEP --------
     def step(self, action):
         self.step_count += 1
         reward = 0
 
-        # Normalize action
         if not isinstance(action, str):
             action = "skip"
         else:
@@ -63,7 +58,6 @@ class StudentLifeEnv:
         weakest = min(subjects, key=subjects.get)
         subject = weakest if random.random() < 0.7 else random.choice(list(subjects.keys()))
 
-        # ---- ACTION LOGIC ----
         if action == "study_new_topic":
             if self.state_data["energy"] > 0:
                 self.state_data["energy"] -= 0.1
@@ -101,7 +95,6 @@ class StudentLifeEnv:
             self.state_data["stress"] += 0.1
             reward -= 0.5
 
-        # ---- CLAMP VALUES ----
         for sub in subjects:
             subjects[sub] = max(0, min(1, subjects[sub]))
 
@@ -113,12 +106,7 @@ class StudentLifeEnv:
 
         return self.state(), reward, done, {}
 
-    # -------- FINAL SCORE (CRITICAL FIX) --------
     def final_score(self):
-        """
-        MUST return task → score mapping
-        Validator uses this to count tasks + graders
-        """
         return {
             task["name"]: task["grader"](self, 0)
             for task in self.tasks

@@ -5,18 +5,15 @@ from openai import OpenAI
 from environment import StudentLifeEnv
 from tasks import TASKS
 
-# ================== CONFIG ==================
 API_BASE_URL = os.environ["API_BASE_URL"]
 API_KEY = os.environ.get("HF_TOKEN") or os.environ["API_KEY"]
 MODEL_NAME = os.environ.get("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")
 
-# ================== CLIENT ==================
 client = OpenAI(
     base_url=API_BASE_URL,
     api_key=API_KEY
 )
 
-# ================== LOGGING ==================
 def log_step(step, action, reward, done, error=None):
     error_val = error if error else "null"
     print(f"[STEP] step={step} action={action} reward={reward:.2f} done={str(done).lower()} error={error_val}", flush=True)
@@ -25,7 +22,6 @@ def log_end(success, steps, score, rewards):
     rewards_str = ",".join(f"{r:.2f}" for r in rewards)
     print(f"[END] success={str(success).lower()} steps={steps} score={score:.3f} rewards={rewards_str}", flush=True)
 
-# ================== ACTION ==================
 def get_action_from_model(state, step_count, max_steps):
 
     energy = state["energy"]
@@ -49,7 +45,6 @@ def get_action_from_model(state, step_count, max_steps):
 
 def main():
 
-    # Ensure API call (required by validator)
     try:
         client.chat.completions.create(
             model=MODEL_NAME,
@@ -59,7 +54,6 @@ def main():
     except Exception:
         pass
 
-    # 🔥 LOOP THROUGH TASKS
     for task in TASKS:
 
         env = StudentLifeEnv()
@@ -84,10 +78,8 @@ def main():
                 if done:
                     break
 
-            # ✅ USE GRADER
             score = task["grader"](env)
 
-            # 🔥 STRICT RANGE FIX (MOST IMPORTANT LINE)
             if score <= 0.0:
                 score = 0.01
             elif score >= 1.0:

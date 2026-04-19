@@ -12,12 +12,10 @@ app = FastAPI(
 env = StudentLifeEnv()
 
 
-# ---------- REQUEST MODEL ----------
 class ActionRequest(BaseModel):
     action: str
 
 
-# ---------- ROOT (CRITICAL FOR VALIDATOR) ----------
 @app.get("/")
 @app.post("/")
 def root():
@@ -27,7 +25,6 @@ def root():
     }
 
 
-# ---------- RESET (ALL COMPATIBLE ROUTES) ----------
 @app.post("/reset")
 @app.post("/reset/")
 @app.post("/openenv/reset")
@@ -39,7 +36,6 @@ def reset_all():
     }
 
 
-# ---------- STEP (ALL COMPATIBLE ROUTES) ----------
 @app.post("/step")
 @app.post("/step/")
 @app.post("/openenv/step")
@@ -55,13 +51,11 @@ def step_all(req: ActionRequest):
     }
 
 
-# ---------- STATE ----------
 @app.get("/state")
 def state():
     return env.state()
 
 
-# ---------- TASKS ----------
 @app.get("/tasks")
 def tasks():
     return {
@@ -71,13 +65,13 @@ def tasks():
         }
         for task in TASKS
     }
-# ---------- FINAL SCORE ----------
+
+
 @app.get("/final_score")
 def final_score():
     return env.final_score()
 
 
-# ---------- INFO ----------
 @app.get("/info")
 def info():
     return {

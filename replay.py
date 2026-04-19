@@ -42,7 +42,6 @@ def run_episode():
 
         next_state, reward, done, _ = env.step(action)
 
-        # log trajectory step
         trajectory.append({
             "step": step,
             "action": action,
@@ -56,12 +55,10 @@ def run_episode():
         if done:
             break
 
-    # Final Scores
     easy_score = easy_grade(env)
     medium_score = medium_grade(env)
     hard_score = hard_grade(total_reward, env)
 
-    # Summary
     summary = {
         "total_steps": len(trajectory),
         "total_reward": total_reward,
@@ -76,11 +73,9 @@ def run_episode():
         "trajectory": trajectory
     }
 
-    # Save JSON
     with open("episode_1.json", "w") as f:
         json.dump(output, f, indent=2)
 
-    # Print summary
     print("\n==============================")
     print("Episode Replay Summary")
     print("==============================")

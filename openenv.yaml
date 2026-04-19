@@ -1,10 +1,5 @@
 name: student-exam-strategy-env
 
-description: >
-  A reinforcement learning environment simulating engineering exam preparation.
-  The agent must balance studying multiple subjects, revision, testing, and rest
-  while managing energy and stress under time constraints.
-
 version: 1.0
 
 entrypoint:
@@ -83,13 +78,10 @@ reward:
 
 tasks:
   - name: easy
-    description: Achieve average subject mastery above 0.8
     grader: graders.easy:grade
 
   - name: medium
-    description: Balance subject mastery and revision level above 0.6
     grader: graders.medium:grade
 
   - name: hard
-    description: Optimize full exam readiness including performance, balance, and stress
     grader: graders.hard:grade
