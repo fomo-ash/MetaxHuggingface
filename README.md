@@ -14,6 +14,7 @@ pinned: false
 A **multi-factor reinforcement learning environment** that simulates real-world engineering exam preparation. This also plans to extend across all exams.
 An AI agent must learn **optimal study strategies** under constraints of time, energy, stress, and memory decay.
 
+making some changes
 ---
 
 ## 🌐 Live API
