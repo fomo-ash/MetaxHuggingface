@@ -11,7 +11,7 @@ pinned: false
 
 # 🎓 Adaptive Engineering Exam Strategy Environment (OpenEnv)
 
-A **multi-factor reinforcement learning environment** that simulates real-world engineering exam preparation.
+A **multi-factor reinforcement learning environment** that simulates real-world engineering exam preparation. This also plans to extend across all exams.
 An AI agent must learn **optimal study strategies** under constraints of time, energy, stress, and memory decay.
 
 ---
